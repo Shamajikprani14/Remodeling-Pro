@@ -19,5 +19,7 @@ var CONFIG = {
   SERVICE_ZIPS: ["980", "981", "982", "983", "984"],
 
   // Google Tag Manager container (it loads GA and the Meta Pixel).
-  GTM_ID: "GTM-NVTKKW62"
+  // Off ("") until Remodeling Pro's own container is set up. The previous
+  // container, GTM-NVTKKW62, isn't in Remodeling Pro's GTM account.
+  GTM_ID: ""
 };
