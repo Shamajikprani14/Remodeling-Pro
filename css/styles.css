@@ -21,10 +21,11 @@ h1,h2,h3{font-family:"Archivo","Karla",system-ui,sans-serif;color:var(--ink);lin
 section{padding-block:56px}
 
 /* ---------- Offer bar ---------- */
-.offer{background:var(--orange-bar);color:var(--ink);font-weight:700;font-size:14px;padding:8px 0 9px}
+.offer{position:sticky;top:0;z-index:30;background:var(--orange-bar);color:var(--ink);font-weight:700;font-size:14px;padding:8px 0 9px}
+/* Keep forms clear of the sticky offer bar when the page scrolls to them */
+.lead-form{scroll-margin-top:84px}
 .offer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 22px;text-align:center}
-.offer-spots{font-size:13px}
-@media(max-width:600px){.offer{padding:7px 0 8px}.offer .wrap{gap:3px 14px}.offer-title{font-size:14px}.cd{gap:7px}.cd b{font-size:15px}.cd span{font-size:11px}.offer-spots{font-size:12px}.sm-hide{display:none}}
+@media(max-width:600px){.offer{padding:7px 0 8px}.offer .wrap{gap:3px 14px}.offer-title{font-size:14px}.cd{gap:7px}.cd b{font-size:15px}.cd span{font-size:11px}}
 .offer-title{flex-basis:100%;font-size:15px}
 .cd{display:flex;gap:10px;align-items:baseline}
 .cd span{display:inline-flex;align-items:baseline;gap:3px;font-size:12px;letter-spacing:.02em}

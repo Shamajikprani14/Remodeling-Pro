@@ -8,8 +8,8 @@ var CONFIG = {
   FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbxqn8je2w196CZMjFbq6JNj-tr4QctFlU8qKeAW2FNL_IkpIYU7lPgdML-z0OYgyDXe/exec",
 
   // Offer deadline (Pacific time). Countdown hides itself once it passes.
-  DEADLINE: "2026-09-30T23:59:59-07:00",
-  DEADLINE_LABEL: "Sept 30",
+  DEADLINE: "2026-10-31T23:59:59-07:00",
+  DEADLINE_LABEL: "Oct 31",
 
   // Service area. A ZIP qualifies if it starts with one of these 3-digit prefixes
   // or matches a full 5-digit ZIP. 980-984 covers King, Pierce and Snohomish
