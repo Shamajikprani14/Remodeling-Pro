@@ -142,7 +142,7 @@ section{padding-block:56px}
 .rating-years{display:block;font:800 20px/1 "Archivo",sans-serif;color:var(--ink);white-space:nowrap}
 .rating-who{grid-column:1/-1;margin:0 0 8px;padding-bottom:10px;border-bottom:1px solid #F1ECE4;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
 .rev-grid{display:grid;gap:18px}
-@media(min-width:760px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
 .rev{background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow);padding:24px;margin:0;display:flex;flex-direction:column;gap:14px}
 .rev .stars svg{width:16px;height:16px}
 .rev blockquote{margin:0;font-size:17px;color:var(--ink);line-height:1.6}
@@ -155,6 +155,7 @@ section{padding-block:56px}
 .rev-verify p{margin:0;color:var(--ink-2);font-size:17px;line-height:1.6}
 .rev-verify .rev-verify-title{font:800 22px/1.25 "Archivo",sans-serif;color:var(--ink)}
 .rev-verify .btn{margin-top:4px}
+@media(min-width:900px){.rev-verify{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:8px 32px;align-items:center}.rev-verify p{grid-column:1}.rev-verify .btn{grid-column:2;grid-row:1/3;width:auto;margin-top:0}}
 
 /* ---------- How it works ---------- */
 .steps{display:grid;gap:18px;counter-reset:s}
