@@ -13,6 +13,7 @@ Static landing page hosted on Hostinger behind Cloudflare. There is no build ste
 | `img/` | Logo, icons, hero and before/after photos (WebP) |
 | `fonts/` | Self-hosted Archivo and Karla (`.woff2`) |
 | `.htaccess` | Compression, file types and cache headers |
+| `tracking/` | GTM import file and tracking setup steps. Not part of the site; don't upload it |
 
 `js/config.js` must load before `js/main.js`, because `main.js` reads the global `CONFIG` object.
 

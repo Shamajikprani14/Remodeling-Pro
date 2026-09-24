@@ -41,6 +41,9 @@
 
   /* ---------- Tracking helpers ---------- */
   window.dataLayer = window.dataLayer || [];
+  // GTM tags check page_type so they only fire on this landing page,
+  // even if the same container is also installed on the main site.
+  window.dataLayer.push({ page_type: "bathroom_lp" });
   function track(event, data) {
     window.dataLayer.push(Object.assign({ event: event }, data || {}));
   }
@@ -51,6 +54,17 @@
       if (window.fbq) fbq("track", "Contact");
     }
   });
+
+  /* ---------- Form abandonment: started a form but left without submitting ---------- */
+  var formProgress = { started: false, step: "zip", submitted: false, reported: false };
+  function reportAbandon() {
+    if (!formProgress.started || formProgress.submitted || formProgress.reported) return;
+    formProgress.reported = true;
+    track("lead_form_abandon", { last_step: formProgress.step });
+  }
+  // visibilitychange is the reliable "leaving" signal on phones; pagehide covers desktop closes.
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") reportAbandon(); });
+  window.addEventListener("pagehide", reportAbandon);
 
   /* ---------- Phone formatting ---------- */
   function digits(v) { return (v || "").replace(/\D/g, ""); }
@@ -103,7 +117,7 @@
     });
     phone.addEventListener("input", function () { phone.value = formatPhone(phone.value); });
     form.addEventListener("focusin", function () {
-      if (!started) { started = true; track("lead_form_start", { form: form.dataset.form }); }
+      if (!started) { started = true; formProgress.started = true; track("lead_form_start", { form: form.dataset.form }); }
     });
 
     form.querySelector("[data-next]").addEventListener("click", function () {
@@ -112,6 +126,7 @@
         zip.focus();
         return;
       }
+      formProgress.step = "contact";
       track("lead_form_step2", { form: form.dataset.form, zip: zip.value });
       show(step2);
       form.elements.name.focus({ preventScroll: true });
@@ -133,7 +148,7 @@
         if (firstBad) firstBad.focus();
         return;
       }
-      if (form.elements.company_website.value) { show(done); return; } // bot filled the honeypot
+      if (form.elements.company_website.value) { formProgress.submitted = true; show(done); return; } // bot filled the honeypot
 
       var eventId = "lead-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
       var lead = Object.assign({
@@ -159,6 +174,7 @@
       btnLabel.textContent = "Sending…";
 
       send(lead).then(function () {
+        formProgress.submitted = true;
         show(done);
         track("generate_lead", { form: form.dataset.form, project: lead.project, zip: lead.zip, event_id: eventId });
         if (window.fbq) fbq("track", "Lead", { content_name: lead.project }, { eventID: eventId });
@@ -209,6 +225,7 @@
   document.querySelectorAll("[data-goto-form]").forEach(function (a) {
     a.addEventListener("click", function (e) {
       e.preventDefault();
+      track("cta_click", { location: a.getAttribute("data-cta") || "link" });
       heroForm.scrollIntoView({ behavior: "smooth", block: "start" });
       var z = heroForm.elements.zip;
       if (!heroForm.querySelector('[data-step="1"]').hidden) setTimeout(function () { z.focus({ preventScroll: true }); }, 450);
