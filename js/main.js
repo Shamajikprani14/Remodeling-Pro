@@ -85,9 +85,21 @@
     }
 
     var zip = form.elements.zip, phone = form.elements.phone;
+    var zipErr = zip.closest(".field").querySelector(".err");
+    var zipFormatMsg = zipErr.textContent, zipAreaMsg = zipErr.getAttribute("data-area-msg");
+    function inServiceArea(v) {
+      var list = CONFIG.SERVICE_ZIPS || [];
+      return !list.length || list.some(function (p) { return v.indexOf(p) === 0; });
+    }
+    // Checks the ZIP format, then the service area, and shows the matching message.
+    function zipOk() {
+      var v = zip.value.trim(), wellFormed = /^\d{5}$/.test(v);
+      zipErr.textContent = wellFormed && zipAreaMsg ? zipAreaMsg : zipFormatMsg;
+      return fieldOk(zip, function () { return wellFormed && inServiceArea(v); });
+    }
     zip.addEventListener("input", function () {
       zip.value = digits(zip.value).slice(0, 5);
-      if (zip.closest(".field").classList.contains("invalid")) fieldOk(zip, function (v) { return /^\d{5}$/.test(v); });
+      if (zip.closest(".field").classList.contains("invalid")) zipOk();
     });
     phone.addEventListener("input", function () { phone.value = formatPhone(phone.value); });
     form.addEventListener("focusin", function () {
@@ -95,7 +107,11 @@
     });
 
     form.querySelector("[data-next]").addEventListener("click", function () {
-      if (!fieldOk(zip, function (v) { return /^\d{5}$/.test(v); })) { zip.focus(); return; }
+      if (!zipOk()) {
+        if (/^\d{5}$/.test(zip.value)) track("zip_out_of_area", { form: form.dataset.form, zip: zip.value });
+        zip.focus();
+        return;
+      }
       track("lead_form_step2", { form: form.dataset.form, zip: zip.value });
       show(step2);
       form.elements.name.focus({ preventScroll: true });

@@ -51,8 +51,8 @@
   <div class="wrap hero-grid">
     <div>
       <div class="badge">
-        <span class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
-        200+ Projects Completed
+        <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        Partner rated 4.9 · 98 Google reviews
       </div>
       <h1>Get <em>$2,500 Off</em> Full Bathroom Remodel</h1>
       <p class="lede">No cost, no obligation in-home quote. Licensed, bonded and insured WA contractors: tub-to-shower conversions, walk-in showers, full bath remodels.</p>
@@ -78,7 +78,7 @@
           <div class="field">
             <label for="zip-hero">Your ZIP code</label>
             <input id="zip-hero" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="98032" required>
-            <div class="err">Please enter a 5-digit ZIP code.</div>
+            <div class="err" data-area-msg="Sorry, this offer is only for homes in King, Pierce and Snohomish counties. Questions? Call (425) 728-7809.">Please enter a 5-digit ZIP code.</div>
           </div>
           <div class="field">
             <label for="project-hero">What are you planning?</label>
@@ -132,9 +132,9 @@
 <div class="trust">
   <div class="wrap">
     <ul>
-      <li>Local Contractors</li>
-      <li>200+ WA Bathrooms</li>
-      <li>Bonded &amp; Insured</li>
+      <li>Seattle-Area Contractor</li>
+      <li>25+ Years Experience</li>
+      <li>Licensed, Bonded &amp; Insured</li>
     </ul>
   </div>
 </div>
@@ -148,7 +148,7 @@
         <h2>You qualify for $2,500 off if…</h2>
       </div>
       <ul class="qual-list">
-        <li><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>You own a home in King, Pierce, Snohomish, Spokane or Clark County.</li>
+        <li><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>You own a home in King, Pierce or Snohomish County.</li>
         <li><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg></span>Your project is a tub replacement, walk-in shower conversion or full remodel.</li>
         <li><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span>You book your free in-home quote before <span data-deadline-label>Sept 30</span>.</span></li>
         <li class="qual-hint"><span class="qmark">?</span><span>Not sure if you qualify? <a href="#estimate" data-goto-form>Enter your ZIP</a> and we'll tell you.</span></li>
@@ -193,7 +193,7 @@
   <div class="wrap">
     <div class="reviews-head">
       <div>
-        <p class="sub-eyebrow">From WA homeowners</p>
+        <p class="sub-eyebrow">Google reviews of our partner contractor</p>
         <h2 class="sec-title">What your neighbors say</h2>
       </div>
       <div class="rating-card">
@@ -205,8 +205,8 @@
         </div>
         <span class="rating-sep" aria-hidden="true"></span>
         <div>
-          <span class="rating-years">10+ years</span>
-          <span class="rating-sub">in business</span>
+          <span class="rating-years">25+ years</span>
+          <span class="rating-sub">experience</span>
         </div>
       </div>
     </div>
@@ -216,11 +216,14 @@
         <blockquote>“They pulled the old tub Monday and I was showering in the new walk-in by Saturday. Finished in 6 days, swept the floor on the way out.”</blockquote>
         <figcaption><span class="avatar" aria-hidden="true">L</span><span class="rev-who"><b>Linda · Federal Way</b><span>Walk-in shower conversion · Google review</span></span></figcaption>
       </figure>
-      <figure class="rev">
-        <span class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
-        <blockquote>“The quote they gave us in the kitchen was the number on the final invoice. Nine days, no surprises.”</blockquote>
-        <figcaption><span class="avatar" aria-hidden="true">M</span><span class="rev-who"><b>Mark · Spokane</b><span>Full remodel · Google review</span></span></figcaption>
-      </figure>
+      <!-- To add a review, copy a <figure class="rev"> block above and paste the real
+           Google review text word for word. Use first name + city only, and replace any
+           mention of the company or staff names with [our contractor]. -->
+      <div class="rev rev-verify">
+        <p class="rev-verify-title">Want to read all 98 reviews?</p>
+        <p>They're real Google reviews of the licensed contractor who will do your remodel. Ask Sarah when she calls to book your quote and she'll text you the link.</p>
+        <a class="btn" href="#estimate" data-goto-form>Check my ZIP</a>
+      </div>
     </div>
   </div>
 </section>
@@ -231,7 +234,7 @@
     <p class="eyebrow">How it works</p>
     <h2 class="sec-title">Three steps. About two weeks.</h2>
     <div class="steps">
-      <div class="step-card"><span class="when">30 seconds</span><h3>Check your ZIP</h3><p>Two quick steps. We confirm you're in one of the five counties and lock in the $2,500.</p></div>
+      <div class="step-card"><span class="when">30 seconds</span><h3>Check your ZIP</h3><p>Two quick steps. We confirm you're in one of the three counties and lock in the $2,500.</p></div>
       <div class="step-card"><span class="when">Quote within 24 hours</span><h3>Free in-home quote</h3><p>Sarah calls within 2 hours to book a visit. You get a fixed number, in writing, within 24 hours.</p></div>
       <div class="step-card"><span class="when">5–10 days</span><h3>Done, cleaned, walked through</h3><p>One crew, one start date, one finish date. Most remodels finish in 5–10 working days.</p></div>
     </div>
@@ -252,8 +255,12 @@
         <p>Demolition and haul-away, new tub or shower, surround, vanity, toilet, flooring, fixtures, paint and final cleanup. Plumbing and electrical are done by our partner contractor's licensed crew and permitted where required.</p>
       </details>
       <details>
+        <summary>Who does the work?</summary>
+        <p>Remodeling Pro connects you with our partner contractor: a licensed, bonded and insured Seattle-area remodeler with 25+ years of experience and a 4.9-star rating from 98 Google reviews. You'll meet them at your free in-home quote. Want to read their reviews first? Ask Sarah when she calls and she'll text you the link.</p>
+      </details>
+      <details>
         <summary>How is the $2,500 applied?</summary>
-        <p>It comes straight off your written quote before you sign. No rebate forms, no waiting. Valid for quotes booked by <span data-deadline-label>Sept 30</span> in the five counties listed.</p>
+        <p>It comes straight off your written quote before you sign. No rebate forms, no waiting. Valid for quotes booked by <span data-deadline-label>Sept 30</span> in the three counties listed.</p>
       </details>
       <details>
         <summary>How long will my bathroom be out of service?</summary>
@@ -278,10 +285,10 @@
 <!-- ================= SERVICE AREAS ================= -->
 <section class="areas">
   <div class="wrap">
-    <h2>Proudly serving Washington homeowners</h2>
+    <h2>Proudly serving the greater Seattle area</h2>
     <p>Call now and schedule your free estimate.</p>
     <ul class="counties">
-      <li>King County</li><li>Pierce County</li><li>Snohomish County</li><li>Spokane County</li><li>Clark County</li>
+      <li>King County</li><li>Pierce County</li><li>Snohomish County</li>
     </ul>
   </div>
 </section>
@@ -298,13 +305,13 @@
       <h2>Contact</h2>
       <ul class="foot-list">
         <li><a href="tel:+14257287809" data-track="call_footer"><svg aria-hidden="true"><use href="#i-phone"/></svg>(425) 728-7809</a></li>
-        <li>Mon–Sat, 8am–7pm · Serving homeowners across Washington</li>
+        <li>Mon–Sat, 8am–7pm · Serving King, Pierce &amp; Snohomish counties</li>
       </ul>
     </div>
     <div>
       <h2>Areas we serve</h2>
       <ul class="foot-areas">
-        <li>King County</li><li>Pierce County</li><li>Snohomish County</li><li>Spokane County</li><li>Clark County</li>
+        <li>King County</li><li>Pierce County</li><li>Snohomish County</li>
       </ul>
     </div>
   </div>

@@ -150,6 +150,10 @@ section{padding-block:56px}
 .avatar{width:40px;height:40px;border-radius:50%;background:var(--cream);color:var(--orange-d);display:grid;place-items:center;font:800 16px/1 "Archivo",sans-serif;flex:none}
 .rev-who b{display:block;color:var(--ink);font-size:16px;line-height:1.3}
 .rev-who span{display:block;font-size:14px;color:var(--muted);line-height:1.35}
+.rev-verify{background:var(--cream);box-shadow:none;justify-content:center}
+.rev-verify p{margin:0;color:var(--ink-2);font-size:17px;line-height:1.6}
+.rev-verify .rev-verify-title{font:800 22px/1.25 "Archivo",sans-serif;color:var(--ink)}
+.rev-verify .btn{margin-top:4px}
 
 /* ---------- How it works ---------- */
 .steps{display:grid;gap:18px;counter-reset:s}
